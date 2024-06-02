@@ -1,45 +1,73 @@
-# Análise de Reclamações do Transporte Público com Processamento de Linguagem Natural
-
-
+# Sistema  - Cidades Inteligentes
 
 ## Introdução
 
+
+
 - **Problema:** Grande volume de reclamações sobre transporte público que precisam ser analisadas e categorizadas para melhorar o serviço.
-- **Solução:** Utilização de técnicas de Processamento de Linguagem Natural (PLN) para automatizar a análise e classificação das reclamações.
+
+- **Solução:** Utilização de técnicas de Processamento de Linguagem Natural (PLN) e Rede Neural para automatizar a análise e classificação das reclamações.
+
+  
 
 ## Objetivos
 
-- **Objetivo Geral:** Desenvolver um sistema automatizado utilizando PLN para análise e classificação de reclamações do transporte público.
-- Objetivos Específicos:
-  - Gerar dados fictícios de reclamações para testes usando modelos de PLN.
+- **Objetivo Geral:** Desenvolver um aplicativo de celular automatizado utilizando PLN para análise e classificação de reclamações do transporte público.
+- **Objetivos Específicos**:
+  - Gerar dados fictícios de reclamações para testes usando modelos de PLN para simular o aplicativo ainda em desenvolvimento.
   - Analisar e classificar as reclamações utilizando a API da OpenAI.
-  - Categorizar as reclamações por prioridade e categoria.
+  - Categorizar as reclamações 
   - Gerar relatórios detalhados e resumos da análise.
 
-## Metodologia
+### Funcionamento do Sistema
 
-1. **Geração de Dados Fictícios com PLN:**
-   - Utilizar a API da OpenAI para gerar reclamações fictícias sobre problemas no transporte público.
-   - Prompt: "Gere uma reclamação fictícia sobre problemas no transporte público, incluindo detalhes específicos como tipo de problema, localização, categoria e impacto no usuário."
-   - **Técnica:** Utilização do modelo GPT-4, um modelo avançado de PLN que compreende e gera texto com alta precisão.
-2. **Leitura e Análise das Reclamações com PLN:**
-   - **Leitura:** Ler reclamações de um arquivo de texto.
-   - **Análise:** Utilizar a API da OpenAI (modelo GPT-4) para analisar e classificar cada reclamação.
-   - **Técnica:** Aplicação de modelos de PLN para entender o contexto e o conteúdo das reclamações, extraindo informações relevantes.
-3. **Classificação das Reclamações:**
-   - **Prioridade:** Classificar por prioridade (baixa, média, alta) utilizando análise de texto com PLN.
-   - **Categoria:** Agrupar por categoria com base no conteúdo da reclamação.
-   - **Técnica:** Uso de modelos de PLN para identificar e categorizar temas e níveis de urgência nas reclamações.
-4. **Geração de Relatórios:**
-   - **Detalhados:** Salvar os resultados classificados em um arquivo Markdown detalhado.
-   - **Resumidos:** Criar um resumo dos resultados em outro arquivo Markdown, destacando as categorias repetidas e as prioridades principais.
-   - **Técnica:** Automação da geração de relatórios utilizando scripts Python e modelos de PLN.
+O sistema funcionará através de um aplicativo móvel que permite aos cidadãos relatarem problemas encontrados ao utilizar o transporte público, como falta de iluminação, bancos danificados, lixo acumulado, carros em más condições, entre outros. Os relatórios dos cidadãos serão analisados utilizando técnicas de Processamento de Linguagem Natural (PLN) para extrair informações relevantes e redes neurais para priorização das intervenções.
 
-## Resultados Esperados
 
-- **Relatórios Detalhados:** Arquivos Markdown com a classificação das reclamações por prioridade e categoria, gerados automaticamente.
-- **Resumo da Análise:** Arquivo Markdown resumido com estatísticas importantes e prioridades principais.
-- **Insights:** Identificação das áreas que necessitam de maior atenção e possíveis melhorias no transporte público, baseados na análise de PLN.
+
+### Técnica de IA Utilizada
+
+A técnica de IA utilizada neste projeto é o Processamento de Linguagem Natural (PLN), que permite analisar e compreender os relatos dos cidadãos, e redes neurais, que auxiliam na classificação e priorização dos problemas reportados. As variáveis analisadas incluem:
+
+- **Número de Relatos:** Quantidade de vezes que um problema específico foi relatado.
+- **Frequência de Ocorrência:** Com que frequência o problema ocorre.
+- **Gravidade do Problema:** Impacto do problema no transporte público.
+
+Para cada variável, foram definidos critérios de análise utilizando PLN para interpretação dos relatos e redes neurais para aprendizado e priorização baseados em dados históricos e padrões identificados nos relatos.
+
+### Gráficos e Regras de Análise
+
+- **Gráficos de Entrada:** Serão apresentados gráficos que mostram a distribuição das variáveis de entrada (número de relatos, frequência de ocorrência, gravidade do problema) e suas respectivas distribuições, utilizando histogramas e gráficos de barras.
+- **Gráfico de Saída:** Será apresentado o gráfico de saída, que representa a prioridade atribuída a cada problema nos pontos de parada e/ou transportes, utilizando gráficos de barras ou gráficos de dispersão.
+- **Regras de Análise:** As regras de análise serão apresentadas em forma de tabela, mostrando como as variáveis de entrada são combinadas para determinar a prioridade do problema. As regras são derivadas de padrões identificados pelas redes neurais e refinadas pelo modelo de PLN para garantir precisão e relevância nas intervenções propostas.
+
+### Descrição dos Gráficos
+
+- Gráficos de Entrada:
+
+  - **Distribuição de Número de Relatos:** Mostra quantas vezes cada problema foi relatado.
+
+  ![graficoCIdistribuicaoeNumerosDeRelatos](graficoCIdistribuicaoeNumerosDeRelatos.png)
+
+  - **Distribuição de Frequência de Ocorrência:** Mostra com que frequência cada problema ocorre.
+
+  ![DistruicaoDeFrequenciaDeOcorrencia](DistruicaoDeFrequenciaDeOcorrencia.png)
+
+  - **Distribuição de Gravidade do Problema:** Mostra a gravidade atribuída a cada problema.
+
+  ![distribuicaoDeGravidadeDoProblema](distribuicaoDeGravidadeDoProblema.png)
+
+- Gráfico de Saída:
+
+  - **Prioridade Atribuída aos Problemas:** Mostra a prioridade determinada para cada problema, baseado na análise dos dados de entrada.
+
+  ![prioridadeAtribuidaAosProblemas](prioridadeAtribuidaAosProblemas.png)
+
+### Regras de Análise
+
+- **Regra 1:** Se o número de relatos for alto e a gravidade do problema for alta, então a prioridade é alta.
+- **Regra 2:** Se o número de relatos for médio e a frequência de ocorrência for alta, então a prioridade é média.
+- **Regra 3:** Se o número de relatos for baixo e a gravidade do problema for baixa, então a prioridade é baixa.
 
 
 
